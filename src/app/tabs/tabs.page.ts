@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { DataService } from '../services/data.service';
+
 
 @Component({
   selector: 'app-tabs',
@@ -6,7 +8,10 @@ import { Component } from '@angular/core';
   styleUrls: ['tabs.page.scss']
 })
 export class TabsPage {
+   private shoppingCart = [];
 
-  constructor() {}
+  constructor( private dataService: DataService) {
+      this.shoppingCart = dataService.shoppingCart;
+  }
 
 }

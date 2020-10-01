@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Product Info</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <ion-card>
+        <ion-img style="height: 300px" [src]="productInfo.image"></ion-img>
+        <ion-card-header>
+            <ion-card-subtitle>Product Info</ion-card-subtitle>
+            <ion-card-title>{{productInfo.brand}} <br>{{productInfo.name}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            {{productInfo.desc}}
+        </ion-card-content>
+    </ion-card>
+        <ion-list>
+            <ion-item button (click)="AddToCart(price)" *ngFor="let price of priceInfo" lines="full"><ion-label><h2>{{price.name}}</h2><p>Price: {{price.price}}</p></ion-label></ion-item>
+        </ion-list>
+</ion-content>
